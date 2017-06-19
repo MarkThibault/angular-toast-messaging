@@ -1,0 +1,163 @@
+@import "toast-messaging-settings";
+
+$ToastWrapper: '.ToastWrapper';
+$Toast: '.Toast';
+
+// component
+#{$ToastWrapper}--topRight {
+	// layout
+	position: fixed;
+	right: $ToastWrapper-topRight-right;
+	top: $ToastWrapper-topRight-top;
+	width: 20%;
+	max-width: 25rem;
+	min-width: 12.5rem;
+	z-index: $Toast-zIndex;
+
+	// decendents
+	> .ng-scope {
+		// layout
+    	margin: $ToastWrapper-topRight-ngScope-margin;
+		position: relative;
+		right: 0;
+
+		// theme
+		animation: $ToastWrapper-ngScope-animation;
+		border-radius: $Toast-borderRadius;
+    	box-shadow: $ToastWrapper-topRight-ngScope-boxShadow;
+	}
+
+	> .ng-scope.ng-leave {
+
+		//position: relative;
+		animation: $ToastWrapper-ngScopeNgLeave-animation;
+	}
+}
+
+// component
+#{$Toast} {
+	align-items: stretch;
+	display: flex;
+	position: relative;
+    width: $Toast-width;
+	
+	
+    border-radius: $Toast-borderRadius;
+	border-width: $Toast-borderWidth;
+	border-style: $Toast-borderStyle;
+	background-color: $Toast-backgroundColor;
+
+	// decendents
+	&-iconContainer {
+		display: flex;
+		align-items: center;
+	}
+
+	&-icon {
+		height: $Toast-icon-height;
+		width: $Toast-icon-width;
+		fill: #ccc;
+		margin: $Toast-icon-margin;
+	}
+
+	&-close {
+		@include button-reset;
+		border-width: $Toast-close-borderWidth;
+		margin: $Toast-close-margin;
+		order: 3;
+		padding: $Toast-close-padding;
+
+		border-color: $Toast-close-borderColor;
+		border-style: $Toast-close-borderStyle;
+		color: $Toast-close-color;
+    	font-size: $Toast-close-fontSize;
+		cursor: pointer;
+		transition: all 0.3s $cubic-bezier;
+
+		&:hover {
+			background-color: $Toast-close-hover-backgroundColor;
+		}
+	}
+
+	&-progressBar {
+		position: absolute !important;
+		left: $Toast-progressBar-left;
+		top: $Toast-progressBar-top;
+		height: $Toast-progressBar-height;
+		border-radius: $Toast-progressBar-borderRadius;
+		width: 100%;
+	}
+
+	&-messageContainer {
+		align-items: center;
+		display: flex;
+		flex-grow: 1;
+	}
+
+	&-message, &-title {
+		font-family: $Toast-message-fontFamily;
+		font-size: $Toast-message-fontSize;
+		color: $Toast-message-color;
+		margin: $Toast-message-margin;
+	}
+
+	&.is-confirmation {
+		border-color: $Toast-isConfirmation-borderColor;
+
+		#{$Toast}-progressBar {
+			background-color: $Toast-isConfirmation-progressBar-backgroundColor;
+		}
+
+		#{$Toast}-icon {
+			fill: $Toast-isConfirmation-icon-fill;
+		}
+	}
+
+	&.is-error {
+		border-color: $Toast-isError-borderColor;
+
+		#{$Toast}-progressBar {
+			background-color: $Toast-isError-progressBar-backgroundColor;
+		}
+
+		#{$Toast}-icon {
+			fill: $Toast-isError-icon-fill;
+		}
+	}
+
+	&.is-information {
+		border-color: $Toast-isInformation-borderColor;
+
+		#{$Toast}-progressBar {
+			background-color: $Toast-isInformation-progressBar-backgroundColor;
+		}
+
+		#{$Toast}-icon {
+			fill: $Toast-isInformation-icon-fill;
+		}
+	}
+
+	&.is-warning {
+		border-color: $Toast-isWarning-borderColor;
+
+		#{$Toast}-progressBar {
+			background-color: $Toast-isWarning-progressBar-backgroundColor;
+		}
+
+		#{$Toast}-icon {
+			fill: $Toast-isWarning-icon-fill;
+		}
+	}
+}
+
+@media(max-width: $Toast-media-query-mobile-break) {
+
+}
+
+@media(min-width: $Toast-media-query-mobile-break) {
+	
+}
+
+@media(min-height: $Toast-media-query-vertical-break) {
+
+}

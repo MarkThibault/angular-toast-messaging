@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Angular Toast Messaging Examples</title>
+		<link rel="icon" type="image/png" href="favicon.png" />
+	</head>
+	<body>
+		<main ng-controller="MainController as main">
+			<button class="Button Button--confirm" ng-click="main.showSuccessToast()">Show Toast</button>
+			<button class="Button Button--primary" ng-click="main.showInfoToast()">Show Toast</button>
+			<button class="Button Button--reject" ng-click="main.showErrorToast()">Show Toast</button>
+			<button class="Button Button--warning" ng-click="main.showWarningToast()">Show Toast</button>
+			<button class="Button Button--cancel" ng-click="main.clearAllMessages()">Clear All Toasts</button>
+			<br>
+			<br>
+			<button class="Button Button--reject" ng-click="main.showSingleToast()">Show Single Toast</button>
+			<button class="Button Button--cancel" ng-click="main.clearSingleToast()">Clear Single Toast</button>
+		</main>
+	</body>
+</html>

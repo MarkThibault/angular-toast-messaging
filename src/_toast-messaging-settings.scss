@@ -1,0 +1,78 @@
+//module variables
+$ToastWrapper-topRight-right: 1rem !default;
+$ToastWrapper-topRight-top: 1rem !default;
+$ToastWrapper-topRight-ngScope-margin: 0 0 0.5rem !default;
+$ToastWrapper-topRight-ngScope-boxShadow: $whiteframe-shadow-20dp !default;
+$ToastWrapper-ngScope-animation: toastSlideIn 0.6s $cubic-bezier 0s 1 forwards !default;
+$ToastWrapper-ngScopeNgLeave-animation: toastSlideOut 0.3s $cubic-bezier 0s 1 forwards !default;
+
+$Toast-width: 100% !default;
+$Toast-zIndex: 200 !default;
+$Toast-backgroundColor: $white !default;
+$Toast-borderRadius: $border-radius !default;
+$Toast-borderStyle: solid !default;
+$Toast-borderWidth: 0.25rem 0 0 !default;
+
+$Toast-icon-height: 1.5rem !default;
+$Toast-icon-width: 1.5rem !default;
+$Toast-icon-margin: 1rem !default;
+
+$Toast-close-color: inherit !default;
+$Toast-close-fontSize: 1.25rem !default;
+$Toast-close-margin: 0 0 0 1rem !default;
+$Toast-close-padding: 0.5rem !default;
+$Toast-close-borderWidth: 0 0 0 0.0625rem !default;
+$Toast-close-borderColor: $haze-3 !default;
+$Toast-close-borderStyle: solid !default;
+$Toast-close-hover-backgroundColor: $haze-3 !default;
+
+$Toast-progressBar-left: 0 !default;
+$Toast-progressBar-top: -0.25rem !default;
+$Toast-progressBar-height: 0.25rem !default;
+$Toast-progressBar-borderRadius: $border-radius $border-radius 0 0 !default;
+
+$Toast-message-fontFamily: inherit !default;
+$Toast-message-fontSize: 0.85rem !default;
+$Toast-message-color: inherit !default;
+$Toast-message-margin: 1rem 0 !default;
+
+$Toast-isConfirmation-borderColor: $mantis !default;
+$Toast-isConfirmation-progressBar-backgroundColor: $apple !default;
+$Toast-isConfirmation-icon-fill: $apple !default;
+$Toast-isError-borderColor: $sunglo !default;
+$Toast-isError-progressBar-backgroundColor: $persian-red !default;
+$Toast-isError-icon-fill: $persian-red !default;
+$Toast-isInformation-borderColor: $shakespeare-1 !default;
+$Toast-isInformation-progressBar-backgroundColor: $astral-1 !default;
+$Toast-isInformation-icon-fill: $astral-1 !default;
+$Toast-isWarning-borderColor: $saffron-mango !default;
+$Toast-isWarning-progressBar-backgroundColor: $ecstasy !default;
+$Toast-isWarning-icon-fill: $ecstasy !default;
+
+//media query changes
+$Toast-media-query-mobile-break: $spa-break-point !default;
+$Toast-media-query-vertical-break: $vertical-break !default;
+
+
+
+@keyframes toastSlideIn {
+	0% {
+		margin-top: -2.5rem;
+	}
+
+	100% {
+		margin-top: 0;
+	}
+}
+
+@keyframes toastSlideOut {
+	0% {
+		right: 0;
+		opacity: 1;
+	}
+
+	100% {
+		right: -50%;
+		opacity: 0;
+	}
+}
